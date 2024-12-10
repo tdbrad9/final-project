@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayaking Suggestions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            color: #333;
+            padding: 20px;
+        }
+
+        #output {
+            margin: 20px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #5a9bd4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Why Go Kayaking?</h1>
+    <p>Click the button below to get inspired and find a kayaking spot near you!</p>
+    <button onclick="generateKayakingIdea()">Generate Idea</button>
+    <div id="output"></div>
+
+    <script>
+        const reasons = [
+            "It's a great way to relax and enjoy nature.",
+            "You can get an excellent upper body workout.",
+            "It's an adventurous way to explore new places.",
+            "Perfect for spending quality time with friends and family.",
+            "Experience the thrill of gliding through water.",
+            "It's Awesome!",
+            "Your Dad will be proud!",
+            "Fishing!",
+        ];
+
+        const locations = [
+            "Lake Tahoe, California",
+            "Boundary Waters Canoe Area, Minnesota",
+            "Everglades National Park, Florida",
+            "Colorado River, Arizona",
+            "San Juan Islands, Washington",
+            "Chesapeake Bay, Maryland",
+            "Mendenhall Lake, Alaska",
+            "Niagara River, New York",
+            "Apostle Islands, Wisconsin",
+            "Snake River, Wyoming",
+            "Puget Sound, Washington",
+            "Devils River, Texas",
+            "Mono Lake, California",
+            "Santa Cruz Island, Channel Islands National Park, California",
+            "Okefenokee Swamp, Georgia",
+            "Hocking Hills, Ohio",
+            "Biscayne National Park, Florida"
+];
+
+
+        function generateKayakingIdea() {
+            const randomReason = reasons[Math.floor(Math.random() * reasons.length)];
+            const randomLocation = locations[Math.floor(Math.random() * locations.length)];
+            const outputDiv = document.getElementById("output");
+
+            outputDiv.innerHTML = `
+                <p><strong>Reason:</strong> ${randomReason}</p>
+                <p><strong>Suggested Location:</strong> ${randomLocation}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
